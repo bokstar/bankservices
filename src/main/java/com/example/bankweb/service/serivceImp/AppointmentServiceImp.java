@@ -7,6 +7,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
+import java.util.Optional;
 
 @Service
 public class AppointmentServiceImp implements AppointmentService {
@@ -23,9 +24,12 @@ public class AppointmentServiceImp implements AppointmentService {
         return appointmentDao.findAll();
     }
 
+
+    // Appointment 불러오는 기능 확인
     @Override
     public Appointment findAppointment(Long id) {
-        return appointmentDao.findOne(id);
+        Optional<Appointment> appointment = appointmentDao.findById(id);
+        return appointment.get();
     }
 
     @Override
