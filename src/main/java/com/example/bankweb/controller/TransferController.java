@@ -19,7 +19,7 @@ import java.security.Principal;
 import java.util.List;
 
 @Controller
-@RequestMapping("/transfar")
+@RequestMapping("/transfer")
 public class TransferController {
 
 
