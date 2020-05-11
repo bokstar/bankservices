@@ -38,6 +38,8 @@ public class TransferController {
         return "betweenAccounts";
     }
 
+
+    // 에러ㅠㅠㅠㅠㅠ
     @RequestMapping(value = "/betweenAccounts", method = RequestMethod.POST)
     public String betweenAccountsPost(
             @ModelAttribute("transferFrom") String transferFrom,
@@ -49,7 +51,6 @@ public class TransferController {
         PrimaryAccount primaryAccount = user.getPrimaryAccount();
         SavingsAccount savingsAccount = user.getSavingsAccount();
         transactionService.betweenAccountsTransfer(transferFrom, transferTo, amount, primaryAccount, savingsAccount);
-
         return "redirect:/userFront";
     }
 
