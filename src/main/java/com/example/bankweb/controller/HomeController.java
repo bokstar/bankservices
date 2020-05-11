@@ -1,5 +1,11 @@
 package com.example.bankweb.controller;
 
+import com.example.bankweb.dao.RoleDao;
+import com.example.bankweb.domain.PrimaryAccount;
+import com.example.bankweb.domain.SavingsAccount;
+import com.example.bankweb.domain.User;
+import com.example.bankweb.domain.security.UserRole;
+import com.example.bankweb.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -9,9 +15,11 @@ import org.springframework.web.bind.annotation.RequestMethod;
 
 import java.security.Principal;
 import java.util.HashSet;
+import java.util.Set;
 
 @Controller
 public class HomeController {
+
 
 
     @Autowired
