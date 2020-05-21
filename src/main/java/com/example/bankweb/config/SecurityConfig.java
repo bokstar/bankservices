@@ -44,15 +44,17 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
             "/contact/**",
             "/error/**/*",
             "/console/**",
-            "/signup"
+            "/signup",
+            "/swagger-ui.html",
+            "/swagger-ui.html#/"
     };
 
     @Override
     protected void configure(HttpSecurity http) throws Exception {
         http
                 .authorizeRequests().
-//                antMatchers("/**").
-        antMatchers(PUBLIC_MATCHERS).
+                antMatchers("/**").
+//        antMatchers(PUBLIC_MATCHERS).
                 permitAll().anyRequest().authenticated();
 
         http
